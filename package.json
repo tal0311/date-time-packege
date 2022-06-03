@@ -1,0 +1,24 @@
+{
+  "name": "time-date-formatter",
+  "version": "1.0.0",
+  "description": "Custom time and date formatter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tal0311/date-time-packege.git"
+  },
+  "keywords": [
+    "time",
+    "date",
+    "formatter"
+  ],
+  "author": "Tal Amit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tal0311/date-time-packege/issues"
+  },
+  "homepage": "https://github.com/tal0311/date-time-packege#readme"
+}
