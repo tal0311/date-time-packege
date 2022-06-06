@@ -1,6 +1,6 @@
 {
   "name": "time-date-formatter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom time and date formatter",
   "main": "index.js",
   "scripts": {

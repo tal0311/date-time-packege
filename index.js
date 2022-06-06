@@ -1,37 +1,38 @@
 'use strict'
+var timeStamp = Date.now()
 
+var res = getFormattedTime('AM/PM', '*', timeStamp)
+console.log('res:', res)
 // function start here
-function getFormattedTime(type, sep) {
-  var date = Date.now()
+function getFormattedTime(type, sep, date = Date.now()) {
+  date = new Date(date)
   switch (type) {
     case 'Array':
       return _getTimeAsArray(date)
     case 'HH:MM:SS':
-      return _getTimeByHMS(type, sep)
+      return _getTimeByHMS(type, sep, date)
     case 'HH:MM':
-      return _getTimeByHMS(type, sep)
+      return _getTimeByHMS(type, sep, date)
     case 'AM/PM':
-      return _getLocalTime(type)
-    case 'DD/MM/YYYY':
-      return _getTimeByDMY(type, sep)
+      return _getLocalTime(type, sep, date)
     case 'MM/DD/YYYY':
-      return _getLocalTime(type, sep)
+      return _getLocalTime(type, sep, date)
+    case 'DD/MM/YYYY':
+      return _getTimeByDMY(type, sep, date)
     default:
       break
   }
 }
 // Private function start here
 function _getTimeAsArray(date) {
-  console.log(date)
-  date = new Date(date)
   date = date.toString()
   date = date.split(' ')
   date = date.splice(0, 5)
   return date
 }
 
-function _getTimeByHMS(type, sep = ':') {
-  var time = new Date()
+function _getTimeByHMS(type, sep = ':', time) {
+  // var time = new Date()
   const hours =
     time.getHours() > 9
       ? time.getHours().toString()
@@ -53,19 +54,19 @@ function _getTimeByHMS(type, sep = ':') {
   }
 }
 
-function _getLocalTime(type, sep = '/') {
-  var time = new Date()
+function _getLocalTime(type, sep = '/', time) {
+  // var time = new Date()
+
   if (type === 'AM/PM') {
-    return time.toLocaleTimeString()
+    return time.toLocaleTimeString().replaceAll(':', sep)
   }
   if (type === 'MM/DD/YYYY') {
-    console.log('ok')
     return time.toLocaleDateString().replaceAll('/', sep)
   }
 }
 
-function _getTimeByDMY(type, sep = '/') {
-  var time = new Date()
+function _getTimeByDMY(type, sep = '/', time) {
+  // var time = new Date()
   return `${time.getDate()}${sep}${
     time.getMonth() + 1
   }${sep}${time.getFullYear()}`
