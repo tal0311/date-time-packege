@@ -1,9 +1,5 @@
 'use strict'
-var timeStamp = Date.now()
 
-var res = getFormattedTime('AM/PM', '*', timeStamp)
-console.log('res:', res)
-// function start here
 function getFormattedTime(type, sep, date = Date.now()) {
   date = new Date(date)
   switch (type) {
