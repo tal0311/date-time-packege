@@ -19,7 +19,7 @@ function getFormattedTime(type, sep, date = Date.now()) {
       break
   }
 }
-// Private function start here
+// Private functions start here
 function _getTimeAsArray(date) {
   date = date.toString()
   date = date.split(' ')
