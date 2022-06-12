@@ -8,11 +8,11 @@ const formatDateTime = require('time-date-formatter')
 
 ## Arguments
 
-The function can accept 3 arrguments:
+The function can accept 3 arguments:
 
-1. Date format [string]. requierd!
+1. Date format [string]. required!
 2. seperator [separator-optional] - will default to '/'
-3. timeStamp [optional]. will default to 'Date.now()'.
+3. timeStamp [optional]. will default to 'Date.now()'
 
 ```bash
   formatDateTime('Array')
